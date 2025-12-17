@@ -2,9 +2,14 @@
 This is a single file tiny expression calculator that compiles expressions into bytecode then executes them using a built-in virtual machine.
 
 ### Screenshot
-<img width="125" height="45" alt="image" src="https://github.com/user-attachments/assets/fdf8fe1e-7c41-444d-9b58-128b726baa8b" />
+<img width="385" height="213" alt="image" src="https://github.com/user-attachments/assets/24d1e20a-1a4e-487f-bf15-32b9acdc0650" />
 
-*Calculates 2 * (4 + 3 / 2) and outputs the answer as 11.
+*Calculates a variety of different expression which includes:
+- Using basic opcodes.
+- Precedence of opcodes.
+- Floating point calculation.
+- Handling spaces.
+- Error handling for unknown tokens.
 
 ## How to Build
 1. Clone the repository and change into its directory:
