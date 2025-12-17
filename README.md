@@ -1,5 +1,5 @@
 # Expression VM Calculator
-This project is a tiny expression calculator that compiles expressions into bytecode then executes them using a built-in virtual machine.
+This is a single file tiny expression calculator that compiles expressions into bytecode then executes them using a built-in virtual machine.
 
 ## How to Build
 1. Clone the repository and change into its directory:
