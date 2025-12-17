@@ -22,11 +22,10 @@ cd Expression-VM-Calculator
 gcc main.c -o main
 ```
 3. Run in the terminal:
-  a. On Linux:
 ```
 ./main
 ```
-  b. On Windows:
+  Or for Windows:
 ```
 .\main
 ```
@@ -37,8 +36,10 @@ gcc main.c -o main
 4. Converts it to Reverse Polish notation (RPN): `TOKEN_NUMBER`, `TOKEN_NUMBER`, `TOKEN_PLUS`
 5. Creates a small bytecode program (`Program` and `ProgramValues`).
 6. Compiles the RPN:
-  a. Creates a dynamic array to store values on the stack: index `0` = value `2` and index `1` = value `2`.
-  b. Converts the source to a bytecode representation:
+
+    a. Creates a dynamic array to store values on the stack: index `0` = value `2` and index `1` = value `2`.
+
+    b. Converts the source to a bytecode representation:
   ```
   OP_CONSTANT 0
   OP_CONSTANT 1
