@@ -160,7 +160,6 @@ void virtual_machine_execute(VirtualMachine *virtual_machine) {
         break;
       }
       case OP_END: {
-        printf("Ending execution.\n");
         return;
       }
       case OP_PRINT: {
@@ -305,29 +304,32 @@ void compile_tokens(Token *tokens, size_t count, Program *program) {
 }
 
 int main(void) {
-  char user_input[127];
-  fgets(user_input, sizeof(user_input), stdin);
+  while (1) {
+    printf("> ");
+    char user_input[127];
+    fgets(user_input, sizeof(user_input), stdin);
 
-  Token tokens[TOKEN_MAX];
-  size_t token_count = scan_tokens(user_input, tokens);
+    Token tokens[TOKEN_MAX];
+    size_t token_count = scan_tokens(user_input, tokens);
 
-  Token postfix[TOKEN_MAX];
-  size_t postfix_count = infix_to_postfix(tokens, token_count, postfix);
+    Token postfix[TOKEN_MAX];
+    size_t postfix_count = infix_to_postfix(tokens, token_count, postfix);
 
-  ProgramValues program_values;
-  program_values_initialize(&program_values);
+    ProgramValues program_values;
+    program_values_initialize(&program_values);
 
-  Program program;
-  program_initialize(&program, &program_values);
+    Program program;
+    program_initialize(&program, &program_values);
 
-  compile_tokens(postfix, postfix_count, &program);
+    compile_tokens(postfix, postfix_count, &program);
 
-  VirtualMachine virtual_machine;
-  virtual_machine_initialize(&virtual_machine, &program);
-  virtual_machine_execute(&virtual_machine);
+    VirtualMachine virtual_machine;
+    virtual_machine_initialize(&virtual_machine, &program);
+    virtual_machine_execute(&virtual_machine);
 
-  program_free(&program);
-  program_values_free(&program_values);
+    program_free(&program);
+    program_values_free(&program_values);
+  }
 
   return 0;
 }
