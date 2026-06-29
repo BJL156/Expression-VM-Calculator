@@ -1,51 +1,35 @@
 # Expression VM Calculator
-This is a single file tiny expression calculator that compiles expressions into bytecode then executes them using a built-in virtual machine.
+[![Language](https://img.shields.io/badge/language-C-blue.svg)](https://en.wikipedia.org/wiki/C_(programming_language))
 
-### Screenshot
-<img width="385" height="213" alt="image" src="https://github.com/user-attachments/assets/24d1e20a-1a4e-487f-bf15-32b9acdc0650" />
+A single-file expression calculator that compiles arithmetic into bytecode and executes it on a built-in virtual machine. It behaves the way real language implementations do.
 
-*Calculates a variety of different expression which includes:
-- Using basic opcodes.
-- Precedence of opcodes.
-- Floating point calculation.
-- Handling spaces.
-- Error handling for unknown tokens.
+Written as a first step toward understanding lexers and bytecode VMs before building the [CPU Simulator](https://github.com/BJL156/CPU-Simulator) and [AArch64 Assembler](https://github.com/BJL156/ARM-Assembler).
 
-## How to Build
-1. Clone the repository and change into its directory:
-```
-git clone https://github.com/BJL156/Expression-VM-Calculator
-cd Expression-VM-Calculator
-```
-2. Compile the program:
-```
+## Build
+```bash
 gcc main.c -o main
-```
-3. Run in the terminal:
-```
 ./main
-```
-  Or for Windows:
-```
-.\main
 ```
 
 ## How It Works
-1. Reads user input: `2 + 2`
-2. Performs a lexical analyst: `TOKEN_NUMBER`, `TOKEN_PLUS`, `TOKEN_NUMBER`
-4. Converts it to Reverse Polish notation (RPN): `TOKEN_NUMBER`, `TOKEN_NUMBER`, `TOKEN_PLUS`
-5. Creates a small bytecode program (`Program` and `ProgramValues`).
-6. Compiles the RPN:
+Given input `2 + 2 * 3`:
 
-    a. Creates a dynamic array to store values on the stack: index `0` = value `2` and index `1` = value `2`.
+1. **Lexer** — tokenizes the input: `NUMBER PLUS NUMBER STAR NUMBER`
+2. **RPN conversion** — reorders by precedence: `2 3 * 2 +` (via shunting-yard)
+3. **Compiler** — emits bytecode:
+```
+    OP_CONSTANT 0   ; 2
+    OP_CONSTANT 1   ; 3
+    OP_MUL
+    OP_CONSTANT 2   ; 2
+    OP_ADD
+    OP_PRINT
+    OP_END
+```
+4. **VM** — executes the bytecode and prints the result.
 
-    b. Converts the source to a bytecode representation:
-  ```
-  OP_CONSTANT 0
-  OP_CONSTANT 1
-  OP_ADD
-  OP_PRINT
-  OP_END
-  ```
-7. Creates the virutal machine (`VirtualMachine`) and executes the compiled bytecode.
-8. Resets `Program` and `ProgramValues` by resetting variables and freeing allocated memory.
+## Features
+- [x] Operator precedence via RPN conversion.
+- [x] Floating point support.
+- [x] Whitespace handling.
+- [x] Error handling for unknown tokens.
