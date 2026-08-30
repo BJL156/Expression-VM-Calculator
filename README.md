@@ -1,5 +1,6 @@
 # Expression VM Calculator
 [![Language](https://img.shields.io/badge/language-C-blue.svg)](https://en.wikipedia.org/wiki/C_(programming_language))
+[![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20Windows-lightgrey.svg)](https://www.linux.org/)
 
 A single-file expression calculator that compiles an arithmetic expression into bytecode and then executes it on a built-in virtual machine. It behaves the way real language implementations do.
 
