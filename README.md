@@ -27,7 +27,7 @@ Given input `2 + 2 * 3`:
     OP_PRINT
     OP_END
 ```
-4. VM - executes the bytecode which includes a print instruction to write out the result.
+4. VM - executes the bytecode which includes a print instruction to write out the result to standard output.
 
 ## Features
 - [x] Operator precedence via RPN conversion.
