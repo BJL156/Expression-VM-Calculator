@@ -19,10 +19,10 @@ Given input `2 + 2 * 3`:
 2. RPN conversion - reorders by precedence level: `2 3 * 2 +`
 3. Compiler - emits bytecode:
 ```
-    OP_CONSTANT 0   ; 2
-    OP_CONSTANT 1   ; 3
+    OP_CONSTANT 0  ; 2
+    OP_CONSTANT 1  ; 3
     OP_MUL
-    OP_CONSTANT 2   ; 2
+    OP_CONSTANT 2  ; 2
     OP_ADD
     OP_PRINT
     OP_END
