@@ -16,7 +16,7 @@ gcc main.c -o main
 Given input `2 + 2 * 3`:
 
 1. Lexer - tokenizes the input: `NUMBER PLUS NUMBER STAR NUMBER`
-2. RPN conversion - reorders by precedence: `2 3 * 2 +` (via shunting-yard)
+2. RPN conversion - reorders by precedence level: `2 3 * 2 +`
 3. Compiler - emits bytecode:
 ```
     OP_CONSTANT 0   ; 2
