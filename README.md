@@ -7,6 +7,7 @@ A single-file expression calculator that compiles an arithmetic expression into 
 Written as a first step toward writing my own AArch64 toolchain from scratch. The goal for this project is to understand lexers and bytecode VMs before continuing to the next project: [CPU Simulator](https://github.com/BJL156/CPU-Simulator).
 
 ## Build
+Clone the repository and change into its directory:
 ```bash
 git clone https://github.com/BJL156/ARM-C-Compiler
 cd ./ARM-C-Compiler
