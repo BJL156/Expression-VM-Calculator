@@ -8,8 +8,13 @@ Written as a first step toward writing my own AArch64 toolchain from scratch. Th
 
 ## Build
 ```bash
-gcc main.c -o main
-./main
+git clone https://github.com/BJL156/ARM-C-Compiler
+cd ./ARM-C-Compiler
+```
+Then use any compiler such as GCC:
+```bash
+gcc main.c -o calculator.out
+./calculator.out
 ```
 
 ## How It Works
