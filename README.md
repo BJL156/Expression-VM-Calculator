@@ -4,7 +4,7 @@
 
 A single-file expression calculator that compiles an arithmetic expression into bytecode and then executes it on a built-in virtual machine. It behaves the way real language implementations do.
 
-Written as a first step toward writing my own AArch64 toolchain from scratch. The goal for this project is to understand lexers and bytecode VMs before continuing to the next project: [CPU Simulator](https://github.com/BJL156/CPU-Simulator).
+Written as a first step toward writing my own AArch64 toolchain from scratch. The goal for this project is to understand lexers and bytecode VMs before continuing to the next project: [CPU Simulator](https://github.com/BJL156/CPU-Simulator) which targets a custom made ISA.
 
 ## Build
 Clone the repository and change into its directory:
