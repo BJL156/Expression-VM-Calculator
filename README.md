@@ -19,7 +19,7 @@ gcc main.c -o calculator.out
 ```
 
 ## How It Works
-Given input `2 + 2 * 3`:
+Using this expression as input `2 + 2 * 3`:
 
 1. Lexer - tokenizes the input: `NUMBER PLUS NUMBER STAR NUMBER`
 2. RPN conversion - reorders by precedence level: `2 3 * 2 +`
